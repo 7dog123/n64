@@ -1,13 +1,6 @@
 FROM ubuntu:20.04
 
-COPY /include /usr/src
-COPY /lib /usr/src /usr/src
-COPY /src /usr/src /usr/src
-COPY /configure /usr/src
-COPY /configure.ac /usr/src
-COPY /install-sh /usr/src
-COPY /install_deps /usr/src
-COPY /makefile.in /usr/src
+COPY configure configure.ac include install-sh install_deps lib makefile.in src /usr/src
 
 ENV EMUDIR=/opt/bizkawk
 ENV N64=/opt/n64
