@@ -94,10 +94,10 @@ binutils.tar.gz               :
 	$(WGET) binutils.tar.gz "$(BINUTILS_URL)"
 binutils                      : | binutils.tar.gz
 	if test ! -d binutils; then mkdir binutils; fi
-	tar xfv binutils.tar.gz --strip-components=1 -C binutils
+	tar xf binutils.tar.gz --strip-components=1 -C binutils
 binutils-nospc                :
 	if test ! -d binutils; then mkdir binutils; fi
-	$(WGET) - "$(BINUTILS_URL)" | tar xzv --strip-components=1 -C binutils
+	$(WGET) - "$(BINUTILS_URL)" | tar xf --strip-components=1 -C binutils
 build-binutils/config.status  : | binutils
 	if test ! -d build-binutils; then mkdir build-binutils; fi
 	cd build-binutils && ../binutils/configure \
@@ -127,13 +127,13 @@ gcc.tar.gz                    :
 	$(WGET) gcc.tar.gz "$(GCC_URL)"
 gcc                           : | gcc.tar.gz
 	if test ! -d gcc; then mkdir gcc; fi
-	tar xfv gcc.tar.gz --strip-components=1 -C gcc
+	tar xf gcc.tar.gz --strip-components=1 -C gcc
 	if [ x"$(GCC_IN_TREE_DEPS)" = x"yes" ]; then \
 		cd gcc && ./contrib/download_prerequisites; \
 	fi
 gcc-nospc                     :
 	if test ! -d gcc; then mkdir gcc; fi
-	$(WGET) - "$(GCC_URL)" | tar xzv --strip-components=1 -C gcc
+	$(WGET) - "$(GCC_URL)" | tar xf --strip-components=1 -C gcc
 	if [ x"$(GCC_IN_TREE_DEPS)" = x"yes" ]; then \
 		cd gcc && ./contrib/download_prerequisites; \
 	fi
@@ -182,10 +182,10 @@ newlib.tar.gz                 :
 	$(WGET) newlib.tar.gz "$(NEWLIB_URL)"
 newlib                        : | newlib.tar.gz
 	if test ! -d newlib; then mkdir newlib; fi
-	tar xfv newlib.tar.gz --strip-components=1 -C newlib
+	tar xf newlib.tar.gz --strip-components=1 -C newlib
 newlib-nospc                  :
 	if test ! -d newlib; then mkdir newlib; fi
-	$(WGET) - "$(NEWLIB_URL)" | tar xzv --strip-components=1 -C newlib
+	$(WGET) - "$(NEWLIB_URL)" | tar xf --strip-components=1 -C newlib
 build-newlib/config.status    : | newlib install-binutils install-gcc-executables
 	if test ! -d build-newlib; then mkdir build-newlib; fi
 	cd build-newlib && ../newlib/configure \
@@ -220,10 +220,10 @@ gdb.tar.gz                    :
 	$(WGET) gdb.tar.gz "$(GDB_URL)"
 gdb                           : | gdb.tar.gz
 	if test ! -d gdb; then mkdir gdb; fi
-	tar xfv gdb.tar.gz --strip-components=1 -C gdb
+	tar xf gdb.tar.gz --strip-components=1 -C gdb
 gdb-nospc                     :
 	if test ! -d gdb; then mkdir gdb; fi
-	$(WGET) - "$(GDB_URL)" | tar xzv --strip-components=1 -C gdb
+	$(WGET) - "$(GDB_URL)" | tar xf --strip-components=1 -C gdb
 build-gdb/config.status       : | gdb
 	if test ! -d build-gdb; then mkdir build-gdb; fi
 	cd build-gdb && ../gdb/configure \
