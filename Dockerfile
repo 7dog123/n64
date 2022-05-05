@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-COPY configure configure.ac include install-sh install_deps lib makefile.in src /usr/src
+COPY /configure /configure.ac /include /install-sh /install_deps /lib /makefile.in /src /usr/src
 
 ENV EMUDIR=/opt/bizkawk
 ENV N64=/opt/n64
@@ -34,3 +34,4 @@ ENV PATH $PATH:${N64}/bin:${EMUDIR}
 
 COPY --from=0 ${N64} ${N64}
 COPY --from=0 ${EMUDIR} ${EMUDIR}
+
