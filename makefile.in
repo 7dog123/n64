@@ -31,7 +31,7 @@ CXXFLAGS_FOR_TARGET           = @CXXFLAGS_FOR_TARGET@
 INSTALL                       = @INSTALL@
 MKDIR_P                       = @MKDIR_P@
 LN_S                          = @LN_S@
-WGET_Q                        = @WGET_Q@
+WGET_Q                        = @WGET@
 
 .PHONY                        : all install install-full install-full-nospc clean distclean quickclean
 .PHONY                        : all-progs $(ALLPROGS) install-progs $(INSTALLPROGS) install-strip-progs $(INSTALLSTRIPPROGS) clean-progs $(CLEANPROGS) distclean-progs $(DISTCLEANPROGS)
