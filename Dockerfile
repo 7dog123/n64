@@ -6,7 +6,7 @@ COPY /include /usr/src/include
 COPY /install-sh /usr/src/install-sh
 COPY /install_deps /usr/src/install_deps
 COPY /lib /usr/src/lib
-COPY /makefile.in /usr/src/makefile
+COPY /makefile.in /usr/src/makefile.in
 COPY /src /usr/src/src/src
 
 ENV EMUDIR=/opt/bizkawk
