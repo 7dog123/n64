@@ -5,7 +5,7 @@ COPY /lib /usr/src
 COPY /src /usr/src
 COPY /configure /usr/src
 COPY /configure.ac /usr/src
-COPY /instsall-sh /usr/src
+COPY /install-sh /usr/src
 COPY /install_deps /usr/src
 COPY /makefile.in /usr/src
 
