@@ -1,4 +1,4 @@
-FROM ubuntu:20.4
+FROM ubuntu:20.04
 
 COPY /include /usr/src
 COPY /lib /usr/src
