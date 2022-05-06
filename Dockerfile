@@ -16,7 +16,7 @@ RUN mkdir -p /opt/bizhawk
 
 RUN wget -q https://github.com/TASEmulators/BizHawk/releases/download/2.8/BizHawk-2.8-linux-x64.tar.gz && \
     tar -xf BizHawk-2.8-linux-x64.tar.gz -C /opt/bizhawk && \
-    rm -rf BizHawk-2.8-linux-x64.tar.gz
+    rm -rf BizHawk-2.8-linux-x64.tar.gz && ls $EMUDIR/
 
 RUN ./install_deps
 
