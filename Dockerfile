@@ -8,7 +8,8 @@ ENV PATH $PATH:${N64}/bin:${EMUDIR}
 
 RUN apt-get update && \
     apt-get -y install wget libcg libcggl lsb-release \
-    mono-complete libopenal-dev
+    mono-complete libopenal-dev wget tar make diffutils \
+    texinfo gcc g++ lua5.3 jansson libusb-1.0 libgmp
 
 WORKDIR /usr/src
 
