@@ -21,11 +21,11 @@ RUN wget -q https://github.com/TASEmulators/BizHawk/releases/download/2.8/BizHaw
 
 RUN ./install_deps
 
-RUN ./configure --prefix=/opt/n64 && \
-    make install-toolchain && \
-    make && make install && \
-    make install-sys && \
-    make install-local-exec
+RUN ./configure --quiet --prefix=/opt/n64 && \
+    make --quiet install-toolchain && \
+    make --quier && make --quier install && \
+    make --quiet install-sys && \
+    make --quiet install-local-exec
 
 FROM ubuntu:20.4
 
